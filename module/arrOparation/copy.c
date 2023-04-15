@@ -17,7 +17,7 @@ int main(){
     {
         scanf("%d", &b[i]);
     }
-    // ans : add two array in another arry
+    // ans : sub add two array index and value
     int ans[n+m];
     for(int i =0; i<n; i++)
     {
@@ -27,7 +27,7 @@ int main(){
     int i = n;
     for(int j = 0; j<m; j++)
     {
-        ans[i] = b[j];
+        ans[i] = b[j]; 
         i++;
     }
     for(int i=0; i<n+m; i++)
