@@ -1,29 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    int n;
-    scanf("%d", &n);
-    int arr[n];
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &arr[i]);
+int main() {
+    char str[1001];
+    int i, len;
+    int is_palindrome = 1; // assume string is palindrome initially
+    
+    scanf("%s", str); // read input string
+    
+    len = strlen(str);
+    for(i=0; i<len/2; i++) {
+        if(str[i] != str[len-i-1]) {
+            is_palindrome = 0; // if mismatch found, string is not palindrome
+            break;
+        }
     }
-
-    int i = 0;
-    int j = n - 1;
-    while (i < j)
-    {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-        i++;
-        j--;
+    
+    if(is_palindrome) {
+        printf("YES\n"); // if string is palindrome
+    } else {
+        printf("NO\n"); // if string is not palindrome
     }
-    for (int i = 0; i<n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
+    
     return 0;
 }
